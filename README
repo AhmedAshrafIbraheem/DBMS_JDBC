@@ -1,0 +1,25 @@
+DBMS_JDBC
+============
+This project consists of two main parts DataBase Management System (DBMS) and Java DataBase Connectivity (JDBC).
+The Project support XML, JSON and ProtocolBuffer format.
+The Project uses 'log4j' to show actions and exceptions.
+
+DBMS takes a SQL statement then it parses the statement and executes it.
+DBMS consists of three parts 1) Parser. 2) Machine(Logic). 3) File Manipultion.
+It supports (VarChar, Int, Float, Date) dataTypes.
+It supports (Create, Drop, Use, Alter, Insert, Update, Delete, Select, Union) commands.
+
+Parser is mainly like a finite state machine such every state takes you to the next one.
+Command is a super class that mainly contains data given in the SQL statement.
+Machine contains the logic to execute commands.
+
+*) DBMS Program Flow (MVC DesignPattern):
+=================
+1) Controller gets the SQL statement, passes it to the parser.
+2) Parser checks the syntax, gets information in the statement and returns a Command that contains this information.
+3) Controller gets the Command and passes it to the Machine part.
+4) Machine calls File Manipulation part to check Database or Table exsitance.
+5) If so, it executes the statement.
+
+I mainly work in DBMS part (Parser and Machine).
+I also work in protocol buffer and log4j.
