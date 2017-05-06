@@ -20,6 +20,3 @@ Machine contains the logic to execute commands.
 3) Controller gets the Command and passes it to the Machine part.
 4) Machine calls File Manipulation part to check Database or Table exsitance.
 5) If so, it executes the statement.
-
-I mainly work in DBMS part (Parser and Machine).
-I also work in protocol buffer and log4j.
